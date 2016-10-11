@@ -1,3 +1,5 @@
+import static java.lang.Math.sqrt;
+
 public class TriangleClass extends geometricObject {
 
 	private double side1;
@@ -36,10 +38,18 @@ public class TriangleClass extends geometricObject {
 		return this.side3;
 	}
 	
-	//public double getArea(double side1, double side2, double side3){
-	 //}
-	public double getPerimeter(double side1, double side2, double side3) {
+	public double getArea(){
+		double s = (side1 + side2 + side3)/2;
+		double area =(s*(sqrt((s-side1)*(s-side2)*(s-side3))));
+		return area;
+	}
+	public double getPerimeter() {
 		return (side1 + side2 + side3);
 	}
-
+	public String toString(){
+		double A = getArea();
+		double P = getPerimeter();
+		return "The triangle is a triangle with a area" + A + "and a perimeter of" + P;
+		
+	}
 }
